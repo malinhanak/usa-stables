@@ -14,7 +14,6 @@ import {
   addDoc,
   Timestamp,
 } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,19 +31,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const storage = getStorage(app);
-const storageRef = ref(storage);
-const imagesRef = ref(storage, "images");
 
 export {
   app,
   auth,
   db,
-  storage,
-  storageRef,
-  imagesRef,
-  uploadBytes,
-  ref,
   doc,
   getDoc,
   deleteDoc,
@@ -55,5 +46,4 @@ export {
   setDoc,
   addDoc,
   Timestamp,
-  getStorage,
 };
